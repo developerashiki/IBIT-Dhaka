@@ -6,17 +6,8 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HeadLineController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\SlideImageController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,6 +33,8 @@ Route::group(['middleware' => 'auth'], function () {
         // Banner Route
         Route::get('/banner', [BannerController::class, 'index'])->name('banner');
         Route::get('/create/banner', [BannerController::class, 'create'])->name('banner-upload');
+        //slide image
+        Route::resource('slide', SlideImageController::class);
     });
 });
 Route::get('/', [FrontendController::class, 'showdata']);

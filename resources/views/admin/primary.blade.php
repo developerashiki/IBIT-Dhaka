@@ -33,7 +33,7 @@ $route = Route::current()->getName();
         </li>
         <!-- Nav Item - Visit Website -->
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('slide.index') }}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span style="font-size:19px">Slide-Image</span>
             </a>

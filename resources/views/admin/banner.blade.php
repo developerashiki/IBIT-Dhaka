@@ -17,9 +17,15 @@
           
             <table>
                 <th>Photo</th>
-                <td>
-                    <img src="#"width="150" alt="">
-                </td>
+                <tbody>
+                    @foreach($data as $key => $slide)
+                    <td>
+                        <img src="{{ $slide->slide }}"width="150" alt="">
+                    </td>
+                    @endforeach
+                  
+                </tbody>
+               
             </table>
         </div>
     </div>
